@@ -77,6 +77,12 @@
             <groupId>org.jetbrains.kotlinx</groupId>
             <artifactId>kotlinx-coroutines-core</artifactId>
             <version>1.7.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Logging Support -->
@@ -84,6 +90,12 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${logback_version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j_version}</version>
         </dependency>
     </dependencies>
 
@@ -169,7 +181,6 @@
                 <configuration>
                     <forkedProcessTimeoutInSeconds>60</forkedProcessTimeoutInSeconds>
                     <argLine>--enable-preview</argLine> <!-- If using Java preview features -->
-                    <javaExecutable>/path/to/java21/bin/java</javaExecutable>
                 </configuration>
             </plugin>
         </plugins>
